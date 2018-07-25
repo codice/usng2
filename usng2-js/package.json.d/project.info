@@ -1,0 +1,40 @@
+{
+  "name": "usng2",
+
+  "description": "UMD compatible script for GEO conversions between LL, UTM, USNG, and MGRS",
+
+   "licenses": [
+    {
+      "type": "MIT"
+    }
+   ],
+
+  "homepage": "https://github.com/codice/usng2",
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codice/usng2.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/codice/usng2/issues"
+  },
+
+  "author": "codice",
+
+  "license": "MIT",
+
+  "keywords": [
+      "gps",
+      "coordinates",
+      "conversion",
+      "mgrs",
+      "usng",
+      "utm",
+      "latitude",
+      "longitude",
+      "lat/long",
+      "coordinate",
+      "system"
+    ]
+}
