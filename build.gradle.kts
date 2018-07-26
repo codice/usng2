@@ -1,3 +1,11 @@
+/*
+Copyright (c) 2018 Codice Foundation
+
+Released under The MIT License; see
+http://www.opensource.org/licenses/mit-license.php
+or http://en.wikipedia.org/wiki/MIT_License
+*/
+// Build file
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import io.gitlab.arturbosch.detekt.extensions.ProfileStorage.defaultProfile
 
@@ -31,7 +39,17 @@ allprojects {
         }
         kotlin {
             ktlint()
-            licenseHeaderFile(rootProject.file("codice.license.kt"), "(package|// Default package)")
+            if (project.name == "usng2-common") {
+                licenseHeaderFile(rootProject.file("progenitor.license.kt"))
+            } else {
+                licenseHeaderFile(rootProject.file("codice.license.kt"), "(package|// Default package)")
+            }
+            trimTrailingWhitespace()
+            endWithNewline()
+        }
+        kotlinGradle {
+            ktlint()
+            licenseHeaderFile(rootProject.file("codice.license.kt"), "// Build file")
             trimTrailingWhitespace()
             endWithNewline()
         }
@@ -42,7 +60,6 @@ tasks {
     "build" {
         dependsOn("detektCheck")
     }
-
 }
 
 configure<DetektExtension> {

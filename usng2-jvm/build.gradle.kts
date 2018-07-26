@@ -1,3 +1,11 @@
+/*
+Copyright (c) 2018 Codice Foundation
+
+Released under The MIT License; see
+http://www.opensource.org/licenses/mit-license.php
+or http://en.wikipedia.org/wiki/MIT_License
+*/
+// Build file
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -26,7 +34,6 @@ tasks {
         }
     }
     val sourceCompatibility = "1.8"
-
 
     "build" {
         dependsOn("publishToMavenLocal")
@@ -70,4 +77,3 @@ publishing {
         }
     }
 }
-

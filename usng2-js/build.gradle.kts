@@ -1,3 +1,11 @@
+/*
+Copyright (c) 2018 Codice Foundation
+
+Released under The MIT License; see
+http://www.opensource.org/licenses/mit-license.php
+or http://en.wikipedia.org/wiki/MIT_License
+*/
+// Build file
 import com.moowork.gradle.node.npm.NpmTask
 import org.jetbrains.kotlin.gradle.frontend.KotlinFrontendExtension
 import org.jetbrains.kotlin.gradle.frontend.webpack.WebPackExtension
@@ -66,7 +74,7 @@ tasks {
     }
 }
 
-open class NpmPrePublish: DefaultTask() {
+open class NpmPrePublish : DefaultTask() {
     @TaskAction
     fun run() {
         val outDir = project.mkdir("${project.buildDir}/npmpub_tmp")
