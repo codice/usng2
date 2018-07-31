@@ -6,20 +6,15 @@ http://www.opensource.org/licenses/mit-license.php
 or http://en.wikipedia.org/wiki/MIT_License
 */
 // Build file
-import io.gitlab.arturbosch.detekt.extensions.DetektExtension
-import io.gitlab.arturbosch.detekt.extensions.ProfileStorage.defaultProfile
 
 plugins {
-    id("net.ltgt.errorprone") version "0.0.15"
-    id("com.diffplug.gradle.spotless") version "3.13.0"
-    id("io.gitlab.arturbosch.detekt") version "1.0.0.RC7-3"
+    id("net.ltgt.errorprone").version(Versions.errorprone)
+    id("com.diffplug.gradle.spotless").version(Versions.spotless)
+    id("io.gitlab.arturbosch.detekt").version(Versions.detekt)
 }
 
-val projectVersion by extra { "1.0.0-SNAPSHOT" }
-val detektVersion by extra { "1.0.0.RC7-3" }
-
 allprojects {
-    version = projectVersion
+    version = Versions.project
 
     apply(plugin = "java")
     apply(plugin = "com.diffplug.gradle.spotless")
@@ -62,7 +57,9 @@ tasks {
     }
 }
 
-configure<DetektExtension> {
+detekt {
+    version = Versions.detekt
+
     defaultProfile(Action {
         input = rootProject.projectDir.absolutePath
         config = "$projectDir/detekt.yml"

@@ -7,11 +7,11 @@ or http://en.wikipedia.org/wiki/MIT_License
 */
 // Build file
 plugins {
-    id("kotlin-platform-common") version "1.2.51"
+    id("kotlin-platform-common").version(Versions.kotlin)
 }
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib-common")
-    testCompile("org.jetbrains.kotlin:kotlin-test-annotations-common")
-    testCompile("org.jetbrains.kotlin:kotlin-test-common")
+    compile(Libs.kotlinStdlibCommon)
+    testCompile(Libs.kotlinTestAnnotationsCommon)
+    testCompile(Libs.kotlinTestCommon)
 }
