@@ -20,7 +20,7 @@ tasks {
         dependsOn("installGrunt")
     }
 
-    "build" {
+    "check" {
         dependsOn("grunt_mochaTest")
     }
 }
