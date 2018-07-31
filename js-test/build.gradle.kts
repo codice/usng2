@@ -7,8 +7,8 @@ or http://en.wikipedia.org/wiki/MIT_License
 */
 // Build file
 plugins {
-    id("com.moowork.grunt") version "1.2.0"
-    id("com.moowork.node") version "1.2.0"
+    id("com.moowork.grunt").version(Versions.mooworkGrunt)
+    id("com.moowork.node").version(Versions.mooworkNode)
 }
 
 tasks {

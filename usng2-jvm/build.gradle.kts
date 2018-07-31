@@ -9,31 +9,31 @@ or http://en.wikipedia.org/wiki/MIT_License
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("kotlin-platform-jvm") version "1.2.51"
-    id("com.adarshr.test-logger") version "1.3.1"
+    id("kotlin-platform-jvm").version(Versions.kotlin)
+    id("com.adarshr.test-logger").version(Versions.testLogger)
     `maven-publish`
 }
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compile(Libs.kotlinStdlibJdk8)
     "expectedBy"(project(":usng2-common"))
-    testCompile("junit:junit:4.12")
-    testCompile("org.jetbrains.kotlin:kotlin-test")
-    testCompile("org.jetbrains.kotlin:kotlin-test-junit")
+    testCompile(Libs.junit)
+    testCompile(Libs.kotlinTestJdk)
+    testCompile(Libs.kotlinTestJunit)
 }
 
 tasks {
     "compileKotlin"(KotlinCompile::class) {
         kotlinOptions {
-            jvmTarget = "1.8"
+            jvmTarget = Versions.javaTarget
         }
     }
     "compileTestKotlin"(KotlinCompile::class) {
         kotlinOptions {
-            jvmTarget = "1.8"
+            jvmTarget = Versions.javaTarget
         }
     }
-    val sourceCompatibility = "1.8"
+    val sourceCompatibility = Versions.javaTarget
 
     "build" {
         dependsOn("publishToMavenLocal")

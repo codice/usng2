@@ -19,25 +19,25 @@ buildscript {
         maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
     }
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.51")
-        classpath("com.moowork.gradle:gradle-node-plugin:1.2.0")
-        classpath("org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.33")
+        classpath(Libs.kotlinGradlePlugin)
+        classpath(Libs.mooworkNode)
+        classpath(Libs.kotlinFrontendPlugin)
     }
 }
 
 plugins {
-    id("kotlin-platform-js") version "1.2.51"
-    id("com.moowork.node") version "1.2.0"
+    id("kotlin-platform-js").version(Versions.kotlin)
+    id("com.moowork.node").version(Versions.mooworkNode)
 }
 
-version = "0.9.9"
+version = Versions.npmProject
 
 apply(plugin = "org.jetbrains.kotlin.frontend")
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib-js")
+    compile(Libs.kotlinStdlibJs)
     "expectedBy"(project(":usng2-common"))
-    testCompile("org.jetbrains.kotlin:kotlin-test-js")
+    testCompile(Libs.kotlinTestJs)
 }
 
 configure<KotlinFrontendExtension> {
