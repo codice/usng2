@@ -13,10 +13,11 @@ object Versions {
 
     const val javaTarget = "1.8"
 
-    const val kotlin = "1.2.51"
+    const val kotlin = "1.2.60"
     const val kotlinFrontendPlugin = "0.0.33"
     const val spotless = "3.10.0"
     const val errorprone = "0.0.16"
+    const val googleErrorProne = "2.3.1"
     const val testLogger = "1.4.0"
     const val detekt = "1.0.0.RC8"
     const val mooworkGrunt = "1.2.0"
@@ -40,4 +41,6 @@ object Libs {
     const val kotlinFrontendPlugin = "org.jetbrains.kotlin:kotlin-frontend-plugin:${Versions.kotlinFrontendPlugin}"
     const val mooworkNode = "com.moowork.gradle:gradle-node-plugin:${Versions.mooworkNode}"
     const val junit = "junit:junit:${Versions.junit}"
+
+    const val googleErrorProne = "com.google.errorprone:error_prone_core:${Versions.googleErrorProne}"
 }

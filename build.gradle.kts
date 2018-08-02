@@ -20,6 +20,10 @@ allprojects {
     apply(plugin = "com.diffplug.gradle.spotless")
     apply(plugin = "net.ltgt.errorprone")
 
+    dependencies {
+        errorprone(Libs.googleErrorProne)
+    }
+
     repositories {
         jcenter()
         mavenLocal()
@@ -52,7 +56,7 @@ allprojects {
 }
 
 tasks {
-    "build" {
+    "check" {
         dependsOn("detektCheck")
     }
 }
