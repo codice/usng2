@@ -68,8 +68,8 @@ Javascript users can also look at the included javascript test file,
 
 ## Discussion
 * Discuss USNG2 in our forum [usng2-developers](https://groups.google.com/forum/#!forum/usng2-developers)
-* For more support options, check our [Support guide](https://github.com/codice/usng2/.github/blob/master/SUPPORT.md)
-* Contributors should check our [Contributor guidelines](https://github.com/codice/usng2/.github/blob/master/CONTRIBUTING.md)
+* For more support options, check our [Support guide](https://github.com/codice/usng2/blob/master/.github/SUPPORT.md)
+* Contributors should check our [Contributor guidelines](https://github.com/codice/usng2/blob/master/.github/CONTRIBUTING.md)
 
 ## License
 [MIT](https://github.com/codice/usng2/blob/master/LICENSE.md)

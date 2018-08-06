@@ -2,7 +2,7 @@
 
 Have you read USNG2's Code of Conduct? By filing an Issue, you are
 expected to comply with it, including treating everyone with respect:
-https://github.com/codice/usng2/.github/blob/master/CODE_OF_CONDUCT.md
+https://github.com/codice/usng2/blob/master/.github/CODE_OF_CONDUCT.md
 
 Do you want to ask a question? Are you looking for support? The USNG2
 developers group - https://groups.google.com/forum/#!forum/usng2-developers
