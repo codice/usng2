@@ -11,6 +11,10 @@ plugins {
     id("com.moowork.node").version(Versions.mooworkNode)
 }
 
+node {
+    download = true
+}
+
 tasks {
     "installGrunt" {
         dependsOn(":usng2-js:build", "npmInstall")
