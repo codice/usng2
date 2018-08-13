@@ -17,7 +17,7 @@ node {
 
 tasks {
     "installGrunt" {
-        dependsOn(":usng2-js:build", "npmInstall")
+        dependsOn(":usng2-js:npmPrePublish", "npmInstall")
     }
 
     "grunt_mochaTest" {

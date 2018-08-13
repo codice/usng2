@@ -1,6 +1,6 @@
 # Build directories
 **/class
-/js-test/package-lock.json
+**/package-lock.json
 **/build
 
 # Log file

@@ -13,6 +13,7 @@ import org.codice.usng2.Precision
 import org.codice.usng2.UsngCoordinate
 import org.codice.usng2.UtmCoordinate
 
+@Suppress("TooManyFunctions")
 class Converter(isNad83Datum: Boolean) {
     private val translator = CoordinateSystemTranslator(isNad83Datum)
 
