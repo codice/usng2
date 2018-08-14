@@ -30,8 +30,12 @@ pipeline {
             }
         }
         stage('Deploy') {
+            environment {
+                // any environment variable used for a credential automatically gets split into two like <VARNAME>_USR and <VARNAME>_PSW
+                CODICE_DEPLOY = credentials('codice-deploy-creds')
+            }
             steps {
-                sh './gradlew publish'
+                sh './gradlew publish -Pcodice_deploy_username=$CODICE_DEPLOY_USR -Pcodice_deploy_password=$CODICE_DEPLOY_PSW'
             }
         }
     }

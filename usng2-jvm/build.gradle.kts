@@ -67,8 +67,24 @@ publishing {
 
     repositories {
         maven {
-            val snapshotsRepoUrl = "\${snapshots.repository.url}"
-            val releasesRepoUrl = "\${releases.repository.url}"
+            val snapshotsRepoUrl = "http://artifacts.codice.org/content/repositories/snapshots/"
+            val releasesRepoUrl = "http://artifacts.codice.org/content/repositories/releases/"
+            credentials {
+                // This will evaluate to an empty string if the property is not present
+                // (can be passed in via cli `-P` arg or via `~/.gradle/gradle.properties`
+                username = if (project.hasProperty("codice_deploy_username")) {
+                    project.property("codice_deploy_username") as String
+                } else {
+                    ""
+                }
+                // This will evaluate to an empty string if the property is not present
+                // (can be passed in via cli `-P` arg or via `~/.gradle/gradle.properties`
+                password = if (project.hasProperty("codice_deploy_password")) {
+                    project.property("codice_deploy_password") as String
+                } else {
+                    ""
+                }
+            }
             url = if (version.toString().endsWith("SNAPSHOT")) {
                 uri(snapshotsRepoUrl)
             } else {

@@ -24,5 +24,6 @@ pluginManagement {
     }
 }
 rootProject.name = "usng2"
+enableFeaturePreview("STABLE_PUBLISHING")
 
 include("usng2-common", "usng2-jvm", "usng2-js", "js-test")
