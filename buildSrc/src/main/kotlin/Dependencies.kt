@@ -9,7 +9,7 @@ or http://en.wikipedia.org/wiki/MIT_License
 @file:Suppress("MaxLineLength")
 object Versions {
     const val project = "1.0-SNAPSHOT"
-    const val npmProject = "0.9.9"
+    const val npmProject = "0.9.9-test-a"
 
     const val javaTarget = "1.8"
 

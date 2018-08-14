@@ -1,5 +1,5 @@
 {
-  "name": "usng2",
+  "name": "@destab/usng2",
 
   "description": "UMD compatible script for GEO conversions between LL, UTM, USNG, and MGRS",
 
