@@ -77,7 +77,7 @@ tasks {
         setWorkingDir(File("$buildDir/npmpub_tmp"))
         setNpmCommand("publish")
         // Setting the args below is necessary if using a scoped package
-        // setArgs(listOf("--access", "public"))
+        setArgs(listOf("--access", "public"))
     }
 
     "installBrowserify"(NpmTask::class) {
