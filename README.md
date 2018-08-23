@@ -9,6 +9,11 @@ http://www.opensource.org/licenses/mit-license.php
 or http://en.wikipedia.org/wiki/MIT_License
 -->
 # usng2
+
+[![Download the latest release at http://artifacts.codice.org/content/repositories/snapshots/org/codice/usng2/usng2/1.0-SNAPSHOT/](https://img.shields.io/badge/Download-1.0--SNAPSHOT-green.svg)](http://artifacts.codice.org/content/repositories/snapshots/org/codice/usng2/usng2/1.0-SNAPSHOT/)
+[![Download the npm release at https://www.npmjs.com/package/usng2](https://img.shields.io/badge/npm-0.99-brightgreen.svg)](https://www.npmjs.com/package/usng2)
+[![Join the chat at https://groups.google.com/forum/#!forum/usng2-developers](https://img.shields.io/badge/Google%20Group-Join%20the%20chat-blue.svg)](https://groups.google.com/forum/#!forum/usng2-developers)
+
 Java & Javascript converter for USNG (U.S. National Grid) and MGRS (Military Grid Reference System)
 coordinates.
 
