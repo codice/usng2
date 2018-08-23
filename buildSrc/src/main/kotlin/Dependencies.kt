@@ -13,9 +13,9 @@ object Versions {
 
     const val javaTarget = "1.8"
 
-    const val kotlin = "1.2.60"
-    const val kotlinFrontendPlugin = "0.0.33"
-    const val spotless = "3.10.0"
+    const val kotlin = "1.2.61"
+    const val kotlinFrontendPlugin = "0.0.37"
+    const val spotless = "3.14.0"
     const val errorprone = "0.0.16"
     const val googleErrorProne = "2.3.1"
     const val testLogger = "1.4.0"

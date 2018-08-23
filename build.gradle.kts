@@ -7,6 +7,7 @@ or http://en.wikipedia.org/wiki/MIT_License
 */
 // Build file
 
+@file:Suppress("StringLiteralDuplication")
 plugins {
     id("net.ltgt.errorprone").version(Versions.errorprone)
     id("com.diffplug.gradle.spotless").version(Versions.spotless)
@@ -41,7 +42,8 @@ allprojects {
             if (project.name == "usng2-common") {
                 licenseHeaderFile(rootProject.file("progenitor.license.kt"))
             } else {
-                licenseHeaderFile(rootProject.file("codice.license.kt"), "(package|// Default package)")
+                licenseHeaderFile(rootProject.file("codice.license.kt"),
+                        "(package|// Default package)")
             }
             trimTrailingWhitespace()
             endWithNewline()

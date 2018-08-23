@@ -1,5 +1,5 @@
 var chai = require('chai');
-var usng2Module = require("../../usng2-js/build/classes/kotlin/main/usng2-js.js");
+var usng2Module = require("../../usng2-js/build/npmpub_tmp/usng2.main.js");
 var converter = new usng2Module.Converter(true);
 var converterStatics = usng2Module.Converter.Companion;
 

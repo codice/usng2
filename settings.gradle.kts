@@ -7,18 +7,25 @@ or http://en.wikipedia.org/wiki/MIT_License
 */
 // Build file
 pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { setUrl("https://jcenter.bintray.com/") }
+        maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap") }
+    }
+
     resolutionStrategy {
         eachPlugin {
-            if (requested.id.id == "kotlin-platform-common") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-
-            if (requested.id.id == "kotlin-platform-jvm") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-
-            if (requested.id.id == "kotlin-platform-js") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            when (requested.id.id) {
+                "kotlin-platform-common" ->
+                    useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+                "kotlin-platform-jvm" ->
+                    useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+                "kotlin-platform-js" ->
+                    useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+                "kotlin-dce-js" ->
+                    useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+                "org.jetbrains.kotlin.frontend" ->
+                    useModule("org.jetbrains.kotlin:kotlin-frontend-plugin:${requested.version}")
             }
         }
     }
