@@ -16,7 +16,7 @@ pipeline {
     }
     environment {
         LINUX_MVN_RANDOM = '-Djava.security.egd=file:/dev/./urandom'
-        PATH="${tool 'docker-latest'}/bin:${tool 'gradle-4.9'}/bin:$PATH"
+        PATH="${tool 'docker-latest'}/bin:${tool 'gradle-4.9'}/bin:${tool 'nodejs-9.11.2'}/bin:$PATH"
     }
     stages {
         stage('Setup') {
@@ -29,13 +29,26 @@ pipeline {
                 sh './gradlew clean check'
             }
         }
-        stage('Deploy') {
+        stage('Artifact Deploy') {
+            when {
+                allOf {
+                    expression { env.CHANGE_ID == null }
+                    expression { env.BRANCH_NAME == "master" }
+                }
+            }
             environment {
                 // any environment variable used for a credential automatically gets split into two like <VARNAME>_USR and <VARNAME>_PSW
                 CODICE_DEPLOY = credentials('codice-deploy-creds')
             }
             steps {
                 sh './gradlew publish -Pcodice_deploy_username=$CODICE_DEPLOY_USR -Pcodice_deploy_password=$CODICE_DEPLOY_PSW'
+            }
+        }
+        stage('Npm Deploy') {
+            steps {
+                withNPM(npmrcConfig: 'codice-npmrc') {
+                    sh './gradlew npmpub'
+                }
             }
         }
     }
